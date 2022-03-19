@@ -21,7 +21,7 @@ jobs:
           version: ${{matrix.version}}
           arch: ${{matrix.arch}}
           ts: ${{matrix.ts}}
-          deps: libcurl, libssh2, nghttp2, openssl
+          deps: libcurl, libiconv, libssh2, libxml2, nghttp2, openssl
       - name: Enable Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
         with:
