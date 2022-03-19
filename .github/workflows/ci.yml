@@ -34,4 +34,6 @@ jobs:
       - name: make
         run: nmake
       - name: test
-        run: nmake test TESTS="-g FAIL,SKIP --show-diff tests"
+        run: |
+          tests\skip.if.server_not_configured.inc >> echo ^<?php die("skip Solr server is not set up");
+          nmake test TESTS="-g FAIL,SKIP --show-diff tests"
