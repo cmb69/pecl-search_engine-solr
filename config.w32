@@ -42,7 +42,7 @@ if(PHP_SOLR != 'no')
 	}
 	if(!((PHP_ZLIB == 'no' && CHECK_LIB('zlib_a.lib;zlib.lib', 'solr', PHP_SOLR))
 		|| (PHP_ZLIB_SHARED && CHECK_LIB('zlib.lib', 'solr', PHP_SOLR))
-		|| (PHP_ZLIB == 'yes' && !PHP_ZLIB_SHARED))) {
+		|| (PHP_ZLIB && !PHP_ZLIB_SHARED))) {
 		WARNING('solr not enabled; zlib libraries not found');
 		PHP_SOLR = "no";
 	}
